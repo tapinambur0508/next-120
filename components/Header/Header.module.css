@@ -1,0 +1,14 @@
+.header {
+  background-color: burlywood;
+  padding: 10px 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navigation__element {
+  list-style-type: none;
+}
