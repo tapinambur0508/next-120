@@ -11,10 +11,7 @@ function Header() {
             <Link href="/">Home</Link>
           </li>
           <li className={css.navigation__element}>
-            <Link href="/about">About</Link>
-          </li>
-          <li className={css.navigation__element}>
-            <Link href="/control-panel">Control Panel</Link>
+            <Link href="/todos">Todos</Link>
           </li>
         </ul>
       </nav>
