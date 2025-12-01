@@ -1,0 +1,14 @@
+/cars/filter/Hyundai/Accent/Sedan/Black/Automat/FWD
+
+app
+  cars
+    filter
+
+function sum(...params) {
+
+}
+
+sum(1)
+sum(2, 3);
+sum(3, 44, 5);
+sum(1, 1, 1, 1, 1, 1);
