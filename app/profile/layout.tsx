@@ -2,9 +2,10 @@ import Link from "next/link";
 
 interface ProfileLayoutProps {
   children: React.ReactNode;
+  photos: React.ReactNode;
 }
 
-function ProfileLayout({ children }: ProfileLayoutProps) {
+function ProfileLayout({ children, photos }: ProfileLayoutProps) {
   return (
     <div>
       <ul
@@ -24,7 +25,10 @@ function ProfileLayout({ children }: ProfileLayoutProps) {
           <Link href="/profile/edit">Edit</Link>
         </li>
       </ul>
-      <div>{children}</div>
+      <div style={{ display: "flex", gap: "20px" }}>
+        <div>{photos}</div>
+        <div>{children}</div>
+      </div>
     </div>
   );
 }

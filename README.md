@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Module-01 Заняття 1
 
-## Getting Started
+- Структура Next.js проєкту
+- Маршрутизація у вебзастосунках
+- Створення сторінок
 
-First, run the development server:
+- Home Page
+- Notes Page
+- About Page
+- Profile Page
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Layout
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- header, children, footer
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Components
+- Link
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Заняття 2
 
-## Learn More
+- axios api
 
-To learn more about Next.js, take a look at the following resources:
+- <https://next-docs-api.onrender.com>
+- lib/api.ts
+- SSR
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 'use client'
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- CSR
 
-## Deploy on Vercel
+- error & loading
+- Dynamic routes
+- Global error & loading
+- Dynamic client component
+- React Query
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- @tanstack/react-query
+- TanStackProvider
+- prefetchQuery
+- HydrationBoundary
+- useParams
+- useQuery
+- refetchOnMount
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Module-02 Заняття 1
+
+- Nested routes
+- Not-found route
+- Catch-all routes
+
+- filter by categoryId
+- filter by name
+
+- useRouter
+
+Заняття 2
+
+- Grouped routes
+- Parallel routes
+
+- @sidebar
+- default.tsx
+
+- Interception route
+
+- @modal
+- empty default
+- modal in RootLayout
+- close modal with router.back
+
+- Redirect
