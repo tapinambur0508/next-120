@@ -1,6 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { getTodos } from "@/services/todos";
+
+export const metadata: Metadata = {
+  title: "Todos",
+  description: "View my todos"
+}
 
 async function Todos() {
   const todos = await getTodos();
