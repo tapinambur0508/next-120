@@ -9,7 +9,7 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
 });
 
 const geistMono = Geist_Mono({
@@ -37,11 +37,11 @@ export default function RootLayout({ children, preview }: RootLayoutProps) {
           <Header />
 
           <div
-            // style={{
-            //   display: "grid",
-            //   gridTemplateColumns: "4fr 9fr",
-            //   gap: "16px",
-            // }}
+          // style={{
+          //   display: "grid",
+          //   gridTemplateColumns: "4fr 9fr",
+          //   gap: "16px",
+          // }}
           >
             {children}
             {preview}

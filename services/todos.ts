@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import type { Todo } from "@/types/todo";
+import type { Todo, TodoPayload } from "@/types/todo";
 
 export async function getTodos() {
   const { data } = await axios.get<Todo[]>(
@@ -12,6 +12,14 @@ export async function getTodos() {
 export async function getTodo(todoId: Todo["id"]) {
   const { data } = await axios.get<Todo>(
     `https://jsonplaceholder.typicode.com/todos/${todoId}`,
+  );
+  return data;
+}
+
+export async function createTodo(payload: TodoPayload) {
+  const { data } = await axios.post<Todo>(
+    "https://jsonplaceholder.typicode.com/todos",
+    payload,
   );
   return data;
 }

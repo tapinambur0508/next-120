@@ -32,7 +32,9 @@ interface TodoProp {
 
 // export default Todo;
 
-export const generateMetadata = async ({params}: TodoProp): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: TodoProp): Promise<Metadata> => {
   const { id } = await params;
   const todo = await getTodo(Number.parseInt(id, 10));
 
@@ -42,9 +44,9 @@ export const generateMetadata = async ({params}: TodoProp): Promise<Metadata> =>
     openGraph: {
       title: todo.title,
       description: `Description for Todo #${todo.id}`,
-    }
-  }
-}
+    },
+  };
+};
 
 // SSG
 async function Todo({ params }: TodoProp) {

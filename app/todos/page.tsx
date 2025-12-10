@@ -5,15 +5,21 @@ import { getTodos } from "@/services/todos";
 
 export const metadata: Metadata = {
   title: "Todos",
-  description: "View my todos"
-}
+  description: "View my todos",
+};
 
 async function Todos() {
   const todos = await getTodos();
 
   return (
     <div>
-      <h1>Todos</h1>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h1>Todos</h1>
+
+        <div>
+          <Link href="/todos/actions/create">Create</Link>
+        </div>
+      </div>
 
       <ul style={{ paddingInline: "40px", listStyleType: "disc" }}>
         {todos.map((todo) => (

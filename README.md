@@ -69,3 +69,35 @@
 - close modal with router.back
 
 - Redirect
+
+## Module-03 Заняття 1
+
+- metadata
+- async generateMetadata
+- Open Graph & Twitter
+- next/image
+
+- width і height
+- next.config.ts
+
+- next/font
+- Performance
+
+- Cache-Control
+- next.config.ts
+
+Заняття 2
+
+- create note
+
+- page
+- sidebar
+- form
+- api
+
+- zustand
+
+- store
+- draft
+- initialDraft
+- persist
