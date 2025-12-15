@@ -16,6 +16,12 @@ function Header() {
           <li className={css.navigation__element}>
             <Link href="/todos">Todos</Link>
           </li>
+          <li className={css.navigation__element}>
+            <Link href="/login">Login</Link>
+          </li>
+          <li className={css.navigation__element}>
+            <Link href="/registration">Registration</Link>
+          </li>
         </ul>
       </nav>
     </header>
