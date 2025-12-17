@@ -1,15 +1,25 @@
-import { NextRequest, NextResponse } from "next/server";
-import { parse } from "cookie";
 import { cookies } from "next/headers";
+import { NextResponse } from "next/server";
+import { parse } from "cookie";
 
 import { api, ApiError } from "../../api";
 
-export async function POST(request: NextRequest) {
-  const payload = await request.json();
+export async function GET() {
+  const cookieStore = await cookies();
 
-  try {
-    const response = await api.post("/auth/register", payload);
-    const cookieStore = await cookies();
+  const accessToken = cookieStore.get("accessToken")?.value;
+  const refreshToken = cookieStore.get("refreshToken")?.value;
+
+  if (accessToken) {
+    return NextResponse.json({ success: true });
+  }
+
+  if (refreshToken) {
+    const response = await api.get("/auth/session", {
+      headers: {
+        Cookie: cookieStore.toString(),
+      },
+    });
 
     const setCookie = response.headers["set-cookie"];
 
@@ -33,20 +43,9 @@ export async function POST(request: NextRequest) {
         }
       }
 
-      return NextResponse.json(response.data);
-    } else {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      return NextResponse.json({ success: true });
     }
-  } catch (error) {
-    return NextResponse.json(
-      {
-        error:
-          (error as ApiError).response?.data?.error ??
-          (error as ApiError).message,
-      },
-      {
-        status: (error as ApiError).status,
-      },
-    );
+
+    return NextResponse.json({ success: false });
   }
 }

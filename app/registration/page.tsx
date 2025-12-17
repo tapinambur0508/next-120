@@ -1,31 +1,44 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { register } from "@/services/auth";
+import { useAuthStore } from "@/store/auth";
+import { useState } from "react";
+
+import type { ApiError } from "@/types/api";
 
 function Registration() {
+  const setUser = useAuthStore((store) => store.setUser);
+  const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+
   const { mutate, isPending } = useMutation({
     mutationFn: register,
     onSuccess: (data) => {
-      console.log(data);
+      setUser(data);
+      router.push("/profile");
     },
     onError: (error) => {
-      console.error(error);
+      setError(
+        (error as ApiError).response?.data?.error ??
+          (error as ApiError).message,
+      );
     },
   });
 
   const handleSubmit = (formData: FormData) => {
-    const name = formData.get("name") as string;
+    const userName = formData.get("name") as string;
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
-    mutate({ name, email, password });
+    mutate({ userName, email, password });
   };
 
   return (
     <form action={handleSubmit}>
+      <p>{error}</p>
       <div>
         <label>
           Name: <input type="text" name="name" required />
