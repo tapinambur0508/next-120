@@ -29,17 +29,19 @@ function Header() {
             <Link href="/">Home</Link>
           </li>
           <li className={css.navigation__element}>
-            <Link href="/profile">Profile</Link>
-          </li>
-          <li className={css.navigation__element}>
             <Link href="/todos">Todos</Link>
           </li>
 
           {isAuthenticated ? (
-            <li className={css.navigation__element}>
-              <p>{user?.email}</p>
-              <button onClick={handleLogout}>Logout</button>
-            </li>
+            <>
+              <li className={css.navigation__element}>
+                <Link href="/profile">Profile</Link>
+              </li>
+              <li className={css.navigation__element}>
+                <p>{user?.email}</p>
+                <button onClick={handleLogout}>Logout</button>
+              </li>
+            </>
           ) : (
             <>
               <li className={css.navigation__element}>
